@@ -22,6 +22,36 @@
         <audio id="typespace" src="typespace.mp3"></audio>
     </div>
 
-    <script src="typewriter.js"></script>
+    <script>
+    "use strict";
+
+       // Store/read the text from the div
+    let typeWriterText = document.querySelector("#typewriter").textContent;
+    let counter = 0;
+    
+    init()
+
+    function init() {
+        // Remove the text from the div
+        document.querySelector("#typewriter").textContent = ""; 
+        // Start loop
+        loop();
+    }
+
+    function loop() {
+        counter++;
+        document.querySelector("#typewriter").textContent = typeWriterText.substring(0, counter);
+        // Find text from 0 to counter
+        // Dispaly text part in html
+        // Counter ++
+        // if textlength > counter repeat
+        if (typeWriterText.length>counter) {
+            setTimeout(loop , 0.4);
+        }
+        // Delay 400 
+        console.log(counter);
+    }
+    
+    </script>
 </body>
 </html>
